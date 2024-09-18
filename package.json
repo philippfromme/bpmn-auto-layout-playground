@@ -1,0 +1,41 @@
+{
+  "name": "bpmn-auto-layout-playground",
+  "version": "0.1.0",
+  "description": "bpmn-auto-layout Playground",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "source": "lib/index.js",
+  "scripts": {
+    "build": "webpack --mode=development --node-env development",
+    "start": "webpack serve --open --mode=development --node-env development",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philippfromme/bpmn-auto-layout-playground.git"
+  },
+  "author": "Philipp Fromme <https://github.com/philippfromme>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.34.0",
+    "eslint-plugin-bpmn-io": "^1.0.0",
+    "gh-pages": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "raw-loader": "^4.0.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  },
+  "dependencies": {
+    "bpmn-auto-layout": "^0.5.0",
+    "bpmn-js": "^14.0.0",
+    "min-dash": "^4.1.1",
+    "min-dom": "^4.1.0"
+  }
+}

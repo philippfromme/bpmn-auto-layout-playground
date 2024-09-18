@@ -1,0 +1,33 @@
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+#modeler {
+  flex-grow: 1;
+}
+
+#viewer {
+  position: relative;
+  flex-grow: 1;
+  margin: 4px 4px 4px 0;
+  background: hsl(225, 10%, 97%);
+  border: solid 1px hsl(225, 10%, 75%);
+  border-radius: 4px;
+}
+
+.title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
