@@ -3,6 +3,10 @@ import Modeler from 'bpmn-js/lib/Modeler';
 
 import { layoutProcess } from 'bpmn-auto-layout';
 
+import BPMNModdle from 'bpmn-moddle';
+
+import fileDrop from 'file-drops';
+
 import 'bpmn-js/dist/assets/diagram-js.css';
 import 'bpmn-js/dist/assets/bpmn-js.css';
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css';
@@ -67,3 +71,25 @@ modeler
   .catch((err) => {
     console.log(err);
   });
+
+document.body.addEventListener('dragover', fileDrop('Drop a file', async (files) => {
+  const [ file ] = files;
+
+  const { contents } = file;
+
+  if (await isValidXML(contents)) {
+    modeler.importXML(contents);
+  }
+}));
+
+async function isValidXML(xml) {
+  const moddle = new BPMNModdle();
+
+  try {
+    await moddle.fromXML(xml);
+
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
