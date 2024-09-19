@@ -2,6 +2,13 @@
 
 A playground to test bpmn-auto-layout.
 
-# License
+## Setup
+
+```
+npm install
+npm start
+```
+
+## License
 
 MIT
