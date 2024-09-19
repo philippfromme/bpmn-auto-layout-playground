@@ -46,7 +46,14 @@ body {
 
   .box {
     .label {
-  
+      font-size: 12px;
     }
   }
+}
+
+#file-open {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 12px;
 }
